@@ -30,7 +30,9 @@ public class Student {
    * @param grade the grade of the added result
    */
   public void addResult(String teachingUnitName, Grade grade){
-    // TODO : add code
+
+   TeachingUnitResult teachingUnitResult= new TeachingUnitResult(teachingUnitName, grade);
+   results.add(teachingUnitResult);
   }
 
   /**
@@ -38,9 +40,9 @@ public class Student {
    * @return a string representation of the student
    */
   @Override
-  public String toString() {
-    // TODO : change code
-    return null;
+  public String toString(){
+
+    return this.firstName+" "+this.lastName;
   }
 
 
@@ -50,8 +52,11 @@ public class Student {
    * @return the grades of the student
    */
   public List<Grade> getGrades(){
-    // TODO : change code
-    return null;
+    List<Grade> grades = new ArrayList<>();
+    for(TeachingUnitResult result : results) {
+      grades.add(result.getGrade());
+    }
+    return grades;
   }
 
   /**
@@ -59,9 +64,10 @@ public class Student {
    *
    * @return the average grade of the student
    */
-  public Grade averageGrade() {
-    // TODO : change code
-    return null;
+  public Grade averageGrade(){
+
+    return Grade.averageGrade(this.getGrades());
+
   }
 
   /**
@@ -69,7 +75,11 @@ public class Student {
    * the average grade of the student.
    */
   public void printResults(){
-    // TODO : add code
+    System.out.println(this.toString());
+    for( TeachingUnitResult results : results) {
+      System.out.println(results.toString());
+    }
+    System.out.println("Note moyenne : "+this.averageGrade());
   }
 
 
