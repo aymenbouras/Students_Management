@@ -28,8 +28,8 @@ public class Grade {
    */
 
   public double getValue() {
-    // TODO : change code
-    return 0.;
+
+    return this.value;
   }
 
   /**
@@ -38,8 +38,8 @@ public class Grade {
    */
   @Override
   public String toString() {
-    // TODO : change code
-    return null;
+
+    return  getValue()+"/20";
   }
 
   /**
@@ -50,9 +50,20 @@ public class Grade {
    * @return a grade corresponding to the mean of grade in {@code grades}
    */
   public static Grade averageGrade(List<Grade> grades){
-    // TODO : change code
-    return null;
+    double total=0;
+    double avgg=0;
+    for(int i = 0; i < grades.size(); i++)
+    {
+      total += grades.get(i).getValue();
+
+
+    }
+    avgg = total / grades.size();
+    Grade avg = new Grade(avgg);
+    return avg;
   }
+
+
 
   /**
    * Determines whether or not two grades are equal. Two instances of Grade are equal if the values
