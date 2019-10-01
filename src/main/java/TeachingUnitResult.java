@@ -26,8 +26,8 @@ public class TeachingUnitResult {
    * @return the grade associated to the result
    */
   public Grade getGrade() {
-    // TODO : change code
-    return null;
+
+    return grade;
   }
 
   /**
@@ -36,8 +36,8 @@ public class TeachingUnitResult {
    */
   @Override
   public String toString() {
-    // TODO : change code
-    return null;
+
+    return this.teachingUnitName +" : "+getGrade();
   }
 
 
